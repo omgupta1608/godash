@@ -107,3 +107,29 @@ func (v *Iterable[T]) Some(f func(T) bool) bool {
 	}
 	return false
 }
+
+// Adds elements to the end of the iterable
+func (v *Iterable[T]) Push(args ...T) {
+	if v.Val == nil {
+		return
+	}
+
+	for _, arg := range args {
+		v.Val = append(v.Val, arg)
+	}
+}
+
+// Replaces elements with a fixed value.
+func (v *Iterable[T]) Fill(value T, start, end int) {
+	if v.Val == nil {
+		return
+	}
+
+	if start < 0 || end >= len(v.Val) || start > end {
+		return
+	}
+
+	for i := start; i <= end; i++ {
+		v.Val[i] = value
+	}
+}
