@@ -1,5 +1,17 @@
 package godash
 
+type Number interface {
+	int | int8 | int16 | int32 | int64 | float32 | float64
+}
+
+type Float interface {
+	float32 | float64
+}
+
+type Interger interface {
+	int | int8 | int16 | int32 | int64
+}
+
 func String(v string) *string {
 	return &v
 }
