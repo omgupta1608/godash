@@ -26,7 +26,7 @@ func InRange[T Number](num T, args ...T) (bool, error) {
 	}
 
 	start := T(0)
-	end := args[1]
+	end := args[0]
 	if len(args) == 2 {
 		start = end
 		end = args[1]

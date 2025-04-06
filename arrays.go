@@ -11,6 +11,9 @@ func Chunk[T any](arr []T, size *int) (res [][]T) {
 	if size == nil || *size == 0 {
 		size = &DEFAULT_CHUNK_SIZE
 	}
+	if len(arr) == 0 {
+		return [][]T{}
+	}
 	if len(arr) <= *size {
 		res = append(res, arr)
 		return res

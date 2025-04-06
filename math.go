@@ -32,11 +32,11 @@ func Mean[T Number](arr []T) float64 {
 		return 0
 	}
 
-	sum := T(0)
+	sum := 0.0
 	for _, e := range arr {
-		sum += e
+		sum += float64(e)
 	}
-	return float64(sum / l)
+	return float64(sum / float64(l))
 }
 
 // This method is like Mean except that it accepts iteratee which is invoked for each element in array to generate the value to be averaged. The iteratee is invoked with one argument: (value).
